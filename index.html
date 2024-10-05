@@ -2,265 +2,290 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f7ff;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f7ff;
+      overflow-x: hidden;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            animation: fadeIn 1.5s ease-out;
-        }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      animation: fadeIn 1.5s ease-out;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-        h1 {
-            text-align: center;
-            color: #3b3f44;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: slideInDown 1s ease-out;
-        }
+    h1 {
+      text-align: center;
+      color: #3b3f44;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideInDown 1s ease-out;
+    }
 
-        .section {
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease-out;
-        }
+    .section {
+      margin-bottom : 40px;
+      animation: fadeInUp 0.8s ease-out;
+    }
 
-        .section h2 {
-            color: #3498db;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 8px;
-        }
+    .section h2 {
+      color: #3498db;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 8px;
+      animation: slideInDown 1s ease-out;
+    }
 
-        .section h3 {
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
+    .section h3 {
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
 
-        .personal-info, .skills, .education, .work-experience, .projects {
-            padding: 10px;
-        }
+    .personal-info, .skills, .education, .work-experience, .projects {
+      padding: 10px;
+    }
 
-        .skills ul, .work-experience ul, .projects ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    .skills ul, .work-experience ul, .projects ul {
+      list-style-type: none;
+      padding: 0;
+      animation: zoomIn 0.8s ease-out;
+    }
 
-        .skills li, .work-experience li, .projects li {
-            margin-bottom: 12px;
-        }
+    .skills li, .work-experience li, .projects li {
+      margin-bottom: 12px;
+      animation: rotateIn 0.8s ease-out;
+    }
 
-        .skills li:hover, .work-experience li:hover, .projects li:hover {
-            color: #16a085;
-            transition: color 0.3s ease-in-out;
-        }
+    .skills li:hover, .work-experience li:hover, .projects li:hover {
+      color: #16a085;
+      transition: color 0.3s ease-in-out;
+    }
 
-        footer {
-            text-align: center;
-            background-color: #3498db;
-            color: white;
-            padding: 15px;
-            margin-top: 30px;
-            border-radius: 0 0 12px 12px;
-        }
+    footer {
+      text-align: center;
+      background-color: #3498db;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 0 0 12px 12px;
+    }
 
-        .contact-info {
-            text-align: right;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
+    .contact-info {
+      text-align: right;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
 
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
+    .contact-info a {
+      color: #3498db;
+      text-decoration: none;
+    }
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
 
-        /* Light Colors */
-        body {
-            background-color: #f9fbff;
-        }
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-        .container {
-            background-color: #ffffff;
-        }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        h1, .section h2 {
-            color: #2c3e50;
-        }
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    @keyframes rotateIn {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    /* Animation styles */
+    .animate {
+      animation: pulse 1s ease-out;
+    }
 
-        /* Scroll Animations */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .contact-info {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-        }
-
-    </style>
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Vaishnavi Bachwal</h1>
-            <p class="contact-info">Phone: +91-1234567890 | Email: <a href="mailto:vaishnavi@example.com">vaishnavi@example.com</a> | LinkedIn: <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>Vaishnavi Bachwal</h1>
+      <p class="contact-info">Phone: +91-1234567890 | Email: <a href="mailto:vaishnavi@example.com">vaishnavi@example.com</a> | LinkedIn: <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
+    </header>
 
-        <div class="section personal-info fade-in-section">
-            <h2>Personal Information</h2>
-            <p><strong>Name:</strong> Vaishnavi Bachwal</p>
-            <p><strong>Address:</strong> Mumbai, India</p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/vaishnavi" target="_blank">github.com/vaishnavi</a></p>
-        </div>
-
-        <div class="section skills fade-in-section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Full-Stack Web Development (HTML, CSS, JavaScript, PHP, MySQL)</li>
-                <li>Front-end Design using Bootstrap, React</li>
-                <li>Backend Development (Node.js, Express, PHP)</li>
-                <li>Database Management (MySQL, MongoDB)</li>
-                <li>Version Control with Git/GitHub</li>
-                <li>IoT Development (NodeMCU, R305 Fingerprint Sensor)</li>
-            </ul>
-        </div>
-
-        <div class="section education fade-in-section">
-            <h2>Education</h2>
-            <p><strong>Bachelor of Technology (B.Tech) in Electronics & Communication Engineering (ENC4)</strong><br>
-                XYZ University, Mumbai<br>
-                <em>2019 - Present</em>
-            </p>
-            <p><strong>Diploma in [Subject]</strong><br>
-                ABC Institute, Mumbai<br>
-                <em>2016 - 2019</em>
-            </p>
-        </div>
-
-        <div class="section work-experience fade-in-section">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>
-                    <h3>Intern - IIT Bombay (October 2024)</h3>
-                    <p>Research in human AI/ML alignment, cache hierarchy for data centers, and fairness-aware range queries for selecting unbiased data.</p>
-                </li>
-                <li>
-                    <h3>Freelance Web Developer</h3>
-                    <p>Designed and developed multiple websites for small businesses using front-end and back-end technologies. Handled projects end-to-end from design to deployment.</p>
-                </li>
-                <li>
-                    <h3>Student Panel Developer</h3>
-                    <p>Created a student management panel using C# and MySQL, integrating Crystal Reports for dynamic reporting.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section projects fade-in-section">
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <h3>BioSecure IoT Fingerprint Attendance System</h3>
-                    <p>An IoT-based attendance system using NodeMCU and R305 Fingerprint Sensor, integrated with a PHP-based web portal for attendance management.</p>
-                </li>
-                <li>
-                    <h3>Sustainable Food Ecosystem Platform</h3>
-                    <p>A web platform designed to connect urban farmers, sustainable food producers, and consumers to promote sustainable food practices.</p>
-                </li>
-                <li>
-                    <h3>Smart Shoes for Visually Disabled</h3>
-                    <p>IoT-enabled smart shoes with obstacle detection and guidance system for visually disabled individuals.</p>
-                </li>
-            </ul>
-        </div>
+    <div class="section personal-info fade-in-section">
+      <h2>Personal Information</h2>
+      <p><strong>Name:</strong> Vaishnavi Bachwal</p>
+      <p><strong>Address:</strong> Mumbai, India</p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/vaishnavi" target="_blank">github.com/vaishnavi</a></p>
     </div>
 
-    <footer>
-        <p>Copyright © 2024 Vaishnavi Bachwal. All rights reserved.</p>
-    </footer>
+    <div class="section skills fade-in-section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Full-Stack Web Development (HTML, CSS, JavaScript, PHP, MySQL)</li>
+        <li>Front-end Design using Bootstrap, React</li>
+        <li>Backend Development (Node.js, Express, PHP)</li>
+        <li>Database Management (MySQL, MongoDB)</li>
+        <li>Version Control with Git/GitHub</li>
+        <li>IoT Development (NodeMCU, R305 Fingerprint Sensor)</li >
+      </ul>
+    </div>
 
-    <script>
-        // Scroll animation trigger
-        const sections = document.querySelectorAll('.fade-in-section');
-        const options = {
-            threshold: 0.1,
-        };
+    <div class="section education fade-in-section">
+      <h2>Education</h2>
+      <p><strong>Bachelor of Technology (B.Tech) in Electronics & Communication Engineering (ENC4)</strong><br>
+        XYZ University, Mumbai<br>
+        <em>2019 - Present</em>
+      </p>
+      <p><strong>Diploma in [Subject]</strong><br>
+        ABC Institute, Mumbai<br>
+        <em>2016 - 2019</em>
+      </p>
+    </div>
 
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, options);
+    <div class="section work-experience fade-in-section">
+      <h2>Work Experience</h2>
+      <ul>
+        <li>
+          <h3>Intern - IIT Bombay (October 2024)</h3>
+          <p>Research in human AI/ML alignment, cache hierarchy for data centers, and fairness-aware range queries for selecting unbiased data.</p>
+        </li>
+        <li>
+          <h3>Freelance Web Developer</h3>
+          <p>Designed and developed multiple websites for small businesses using front-end and back-end technologies. Handled projects end-to-end from design to deployment.</p>
+        </li>
+        <li>
+          <h3>Student Panel Developer</h3>
+          <p>Created a student management panel using C# and MySQL, integrating Crystal Reports for dynamic reporting.</p>
+        </li>
+      </ul>
+    </div>
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <div class="section projects fade-in-section">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <h3>BioSecure IoT Fingerprint Attendance System</h3>
+          <p>An IoT-based attendance system using NodeMCU and R305 Fingerprint Sensor, integrated with a PHP-based web portal for attendance management.</p>
+        </li>
+        <li>
+          <h3>Sustainable Food Ecosystem Platform</h3>
+          <p>A web platform designed to connect urban farmers, sustainable food producers, and consumers to promote sustainable food practices.</p>
+        </li>
+        <li>
+          <h3>Smart Shoes for Visually Disabled</h3>
+          <p>IoT-enabled smart shoes with obstacle detection and guidance system for visually disabled individuals.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright 2024 Vaishnavi Bachwal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animation trigger
+    const sections = document.querySelectorAll('.fade-in-section');
+    const options = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Add animation to header
+    const header = document.querySelector('header');
+    header.addEventListener('mouseover', () => {
+      header.classList.add('animate');
+      setTimeout(() => {
+        header.classList.remove('animate');
+      }, 1000);
+    });
+
+    // Add animation to footer
+    const footer = document.querySelector('footer');
+    footer.addEventListener('mouseover', () => {
+      footer.classList.add('animate');
+      setTimeout(() => {
+        footer.classList.remove('animate');
+      }, 1000);
+    });
+  </script>
 </body>
 
 </html>
