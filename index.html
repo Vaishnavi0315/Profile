@@ -4,180 +4,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Vaishnavi's Resume</title>
     <style>
-        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f7ff;
-            overflow-x: hidden;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
         }
 
+        /* Fixed Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 1.5s ease-in-out forwards;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main Container */
         .container {
             max-width: 900px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            animation: fadeIn 1.5s ease-out;
+            margin: 100px auto 20px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             text-align: center;
-            color: #3b3f44;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: slideInDown 1s ease-out;
+            color: #333;
         }
 
         .section {
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 30px;
         }
 
         .section h2 {
-            color: #3498db;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 8px;
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
         }
 
         .section h3 {
-            margin-bottom: 8px;
-            color: #2c3e50;
+            margin-bottom: 5px;
         }
 
-        .personal-info, .skills, .education, .work-experience, .projects {
-            padding: 10px;
-        }
-
-        .skills ul, .work-experience ul, .projects ul {
+        .skills ul,
+        .work-experience ul,
+        .projects ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .skills li, .work-experience li, .projects li {
-            margin-bottom: 12px;
-        }
-
-        .skills li:hover, .work-experience li:hover, .projects li:hover {
-            color: #16a085;
-            transition: color 0.3s ease-in-out;
+        .skills li,
+        .work-experience li,
+        .projects li {
+            margin-bottom: 10px;
         }
 
         footer {
             text-align: center;
-            background-color: #3498db;
+            background-color: #4CAF50;
             color: white;
-            padding: 15px;
-            margin-top: 30px;
-            border-radius: 0 0 12px 12px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 0;
         }
 
         .contact-info {
             text-align: right;
             font-size: 0.9rem;
-            color: #7f8c8d;
+            color: gray;
         }
 
-        .contact-info a {
-            color: #3498db;
+        /* Section Spacing for Scroll */
+        section {
+            padding-top: 50px;
+        }
+
+        a {
+            color: #4CAF50;
             text-decoration: none;
         }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Light Colors */
-        body {
-            background-color: #f9fbff;
-        }
-
-        .container {
-            background-color: #ffffff;
-        }
-
-        h1, .section h2 {
-            color: #2c3e50;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll Animations */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .contact-info {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-        }
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- Fixed Navigation Bar -->
+    <div class="navbar">
+        <a href="#personal-info">Personal Info</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#work-experience">Experience</a>
+        <a href="#projects">Projects</a>
+    </div>
+
+    <div class="container fade-in">
         <header>
-            <h1>Vaishnavi Bachwal</h1>
-            <p class="contact-info">Phone: +91-1234567890 | Email: <a href="mailto:vaishnavi@example.com">vaishnavi@example.com</a> | LinkedIn: <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
+            <h1 class="slide-up">Vaishnavi Bachwal</h1>
+            <p class="contact-info slide-up">Phone: +91-1234567890 | Email: vaishnavi@example.com | LinkedIn: <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
         </header>
 
-        <div class="section personal-info fade-in-section">
+        <!-- Personal Information Section -->
+        <section id="personal-info" class="section slide-up">
             <h2>Personal Information</h2>
             <p><strong>Name:</strong> Vaishnavi Bachwal</p>
             <p><strong>Address:</strong> Mumbai, India</p>
             <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vaishnavi" target="_blank">linkedin.com/in/vaishnavi</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/vaishnavi" target="_blank">github.com/vaishnavi</a></p>
-        </div>
+        </section>
 
-        <div class="section skills fade-in-section">
+        <!-- Skills Section -->
+        <section id="skills" class="section fade-in">
             <h2>Skills</h2>
             <ul>
                 <li>Full-Stack Web Development (HTML, CSS, JavaScript, PHP, MySQL)</li>
@@ -187,9 +171,10 @@
                 <li>Version Control with Git/GitHub</li>
                 <li>IoT Development (NodeMCU, R305 Fingerprint Sensor)</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section education fade-in-section">
+        <!-- Education Section -->
+        <section id="education" class="section slide-up">
             <h2>Education</h2>
             <p><strong>Bachelor of Technology (B.Tech) in Electronics & Communication Engineering (ENC4)</strong><br>
                 XYZ University, Mumbai<br>
@@ -199,9 +184,10 @@
                 ABC Institute, Mumbai<br>
                 <em>2016 - 2019</em>
             </p>
-        </div>
+        </section>
 
-        <div class="section work-experience fade-in-section">
+        <!-- Work Experience Section -->
+        <section id="work-experience" class="section fade-in">
             <h2>Work Experience</h2>
             <ul>
                 <li>
@@ -217,9 +203,10 @@
                     <p>Created a student management panel using C# and MySQL, integrating Crystal Reports for dynamic reporting.</p>
                 </li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section projects fade-in-section">
+        <!-- Projects Section -->
+        <section id="projects" class="section slide-up">
             <h2>Projects</h2>
             <ul>
                 <li>
@@ -235,32 +222,13 @@
                     <p>IoT-enabled smart shoes with obstacle detection and guidance system for visually disabled individuals.</p>
                 </li>
             </ul>
-        </div>
+        </section>
     </div>
 
     <footer>
         <p>Copyright © 2024 Vaishnavi Bachwal. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Scroll animation trigger
-        const sections = document.querySelectorAll('.fade-in-section');
-        const options = {
-            threshold: 0.1,
-        };
-
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, options);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 </body>
 
 </html>
